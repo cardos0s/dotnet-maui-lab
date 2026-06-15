@@ -18,6 +18,15 @@
 | 🍔 [Cardoso's Burguer](./cardosos-burguer) | Página de detalhes de hambúrguer | Layout de detalhe com imagem, classificação e informações do produto |
 | 🎄 [Christmas Catalog](./christmas-catalog) | Catálogo de presentes de Natal | Múltiplas telas (catálogo, opções, detalhes) com cabeçalho fixo + lista rolável |
 
+## 📚 Guias
+
+Boas práticas extraídas da construção dos apps — com snippets prontos:
+
+| Guia | Sobre |
+|---|---|
+| 📐 [Layout](./guides/layout.md) | Árvore visual rasa, `Grid` vs StackLayout aninhado, `CollectionView`, `FlexLayout` |
+| ⚡ [Performance & Velocidade](./guides/performance.md) | Compiled bindings, reciclagem em listas, startup, imagens, UI thread, checklist |
+
 ---
 
 ## 💡 Sobre
@@ -29,7 +38,8 @@ Para um projeto MAUI completo de produção (Clean Architecture, MVVM, mapas e f
 ```
 dotnet-maui-lab/
 ├── cardosos-burguer/    # Demo: página de detalhes de produto
-└── christmas-catalog/   # Demo: catálogo temático multi-tela
+├── christmas-catalog/   # Demo: catálogo temático multi-tela
+└── guides/              # Boas práticas de layout e performance
 ```
 
 ## ▶️ Rodando qualquer demo
