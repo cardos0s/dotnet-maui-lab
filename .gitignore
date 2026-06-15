@@ -1,0 +1,12 @@
+# .NET / MAUI build output
+bin/
+obj/
+*.user
+*.apk
+*.aab
+
+# OS / editor
+.DS_Store
+.vs/
+.idea/
+*.swp

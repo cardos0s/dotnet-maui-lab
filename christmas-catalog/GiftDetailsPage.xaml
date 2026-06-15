@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Christmas.GiftDetailsPage">
+    
+    <ContentPage.Content>
+        <Grid RowDefinitions="*, Auto" Margin="0"> 
+            
+            <ScrollView Grid.Row="0">
+                <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto">
+                    
+                    <Border Grid.Row="0" BackgroundColor="#f5f7f7"
+                           Stroke="Transparent" 
+                           Margin="0,0,0,20"
+                           StrokeShape="RoundRectangle 20,20,20,20" 
+                           WidthRequest="350"
+                           HeightRequest="350"
+                           HorizontalOptions="Center">
+                         <Image Source="muffins.png" HorizontalOptions="Fill" Aspect="AspectFill"/> 
+                    </Border>
+                    
+                    <Grid Grid.Row="1" ColumnDefinitions="*,*" Padding="15, 0, 15, 10"> 
+                        <Label Grid.Column="0" TextColor="#275653" FontSize="15" Text="New" FontAttributes="Bold"/>
+                        <Label Grid.Column="1" TextColor="#872017" FontSize="20" Text="$2.99" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                    </Grid>
+
+                    <Label Grid.Row="2" Grid.ColumnSpan="2" FontSize="25" Padding="15, 0, 15, 15"> 
+                        <Label.FormattedText> 
+                            <FormattedString> 
+                                <Span Text="Christmas&#10;"/> 
+                                <Span Text="chocolate muffins" FontAttributes="Bold"/> 
+                            </FormattedString> 
+                        </Label.FormattedText> 
+                    </Label>
+                    
+                    <Label Grid.Row="3" TextColor="#275653" FontSize="15" Text="Description" Padding="15,0,0,0" FontAttributes="Bold" Margin="0,10,0,0"/> 
+                    
+                    <Label Grid.Row="4" Grid.ColumnSpan="2" 
+                           TextColor="#99a5a5" 
+                           Padding="15,0,15,0" 
+                           Margin="0,0,0,20"  
+                           Text="Chocolate muffins are an ideal gift for someone close to you, especially for chocolate lovers. These delightful treats are beautifully wrapped and adorned with gingerbread cookies, adding a festive touch to their presentation. Their rich chocolatey flavor and soft, moist texture make them perfect for any special moment, whether it's a holiday celebration, a cozy family gathering, or simply to show someone you care.&#10;&#10;Not only do they make a thoughtful gift, but they also pair wonderfully with a warm cup of coffee, hot cocoa, or tea, making them the perfect companion for those quiet, indulgent moments. Each muffin is crafted with care to bring a smile to the faces of your loved ones, reminding them of the joy and comfort that the holiday season brings..&#10;&#10;Ingredients:Made with the finest baking powder, sugar, butter milk, water, chocolate chips, and natural unsweetened cocoa powder."/>
+                    
+                </Grid>
+            </ScrollView>
+            
+            <Grid Grid.Row="1" ColumnDefinitions="Auto,*" HorizontalOptions="Fill" BackgroundColor="White" Padding="20,5,20,10" >
+                
+                <Button Grid.Column="0" TextColor="Black" Text="🖤"
+                        FontAttributes="Bold" BackgroundColor="#e6efef" WidthRequest="60" CornerRadius="20" VerticalOptions="Center" HeightRequest="45" />
+    
+                <Button Grid.Column="1" Text="Buy now" FontAttributes="Bold" BackgroundColor="#c42f21" CornerRadius="20" TextColor="White" HeightRequest="45" Margin="15,0,0,0"/>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
