@@ -1,8 +1,8 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:512BD4,100:8A2BE2&height=160&section=header&text=.NET%20MAUI%20Lab&fontSize=46&fontColor=FFFFFF&fontAlignY=35&desc=Demos%20de%20UI%20e%20layout%20cross-platform&descSize=16&descAlignY=58&descColor=FFFFFF"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:512BD4,100:8A2BE2&height=160&section=header&text=.NET%20MAUI%20Lab&fontSize=46&fontColor=FFFFFF&fontAlignY=35&desc=Arquitetura%20%C2%B7%20Testes%20%C2%B7%20Performance%20%C2%B7%20UI%20cross-platform&descSize=15&descAlignY=58&descColor=FFFFFF"/>
 
 <p align="center">
-  Coleção de demos em <b>.NET MAUI</b> focadas em <b>UI, layout e design cross-platform</b>.<br/>
-  Cada projeto explora a construção de interfaces ricas com controles nativos (Android · iOS · Windows · macOS).
+  Engenharia <b>.NET MAUI</b> de ponta a ponta — de demos de UI a um <b>app de referência com Clean Architecture, MVVM e testes</b>,<br/>
+  mais guias de arquitetura, testes, layout e performance.
 </p>
 
 <p align="center">
@@ -11,44 +11,60 @@
 
 ---
 
-## 🎨 Projetos
+## ⭐ App de referência — destaque
 
-| Demo | Tema | Destaque de UI |
-|---|---|---|
-| 🍔 [Cardoso's Burguer](./cardosos-burguer) | Página de detalhes de hambúrguer | Layout de detalhe com imagem, classificação e informações do produto |
-| 🎄 [Christmas Catalog](./christmas-catalog) | Catálogo de presentes de Natal | Múltiplas telas (catálogo, opções, detalhes) com cabeçalho fixo + lista rolável |
+O **[reference-app (TaskApp)](./reference-app)** mostra como estruturar um app MAUI de verdade:
+
+- 🏛️ **Clean Architecture** — Core (`.NET` puro, testável) separado do head de UI
+- 🧩 **MVVM** com CommunityToolkit.Mvvm (source generators)
+- 💉 **Dependency Injection** — cadeia Repository → ViewModel → Page → App
+- ✅ **Testes unitários** das ViewModels rodando **sem emulador** — `6/6 verdes`, executados de verdade
+- ⚡ Compiled bindings, `CollectionView` reciclado, layout raso
+
+> O domínio é simples de propósito (lista de tarefas) — o valor está na **engenharia**, não no feature set. Veja a [ARCHITECTURE.md](./reference-app/ARCHITECTURE.md).
 
 ## 📚 Guias
 
-Boas práticas extraídas da construção dos apps — com snippets prontos:
-
 | Guia | Sobre |
 |---|---|
-| 📐 [Layout](./guides/layout.md) | Árvore visual rasa, `Grid` vs StackLayout aninhado, `CollectionView`, `FlexLayout` |
-| ⚡ [Performance & Velocidade](./guides/performance.md) | Compiled bindings, reciclagem em listas, startup, imagens, UI thread, checklist |
+| 🏛️ [Arquitetura](./guides/architecture.md) | Clean Architecture, MVVM, DI, navegação, camadas |
+| 🧪 [Testes](./guides/testing.md) | Pirâmide, testar ViewModels sem emulador, dublês, CI |
+| 📐 [Layout](./guides/layout.md) | Árvore visual rasa, `Grid`, `CollectionView`, `FlexLayout` |
+| ⚡ [Performance](./guides/performance.md) | Compiled bindings, reciclagem, startup, imagens, UI thread |
+
+## 🎨 Demos de UI
+
+| Demo | Tema | Destaque |
+|---|---|---|
+| 🍔 [Cardoso's Burguer](./cardosos-burguer) | Detalhes de produto | Layout de detalhe com imagem e avaliação |
+| 🎄 [Christmas Catalog](./christmas-catalog) | Catálogo de Natal | Múltiplas telas, cabeçalho fixo + lista rolável |
 
 ---
 
-## 💡 Sobre
-
-Estas são demos de **craft de interface** — o foco é demonstrar a criação de layouts complexos e temáticos em .NET MAUI usando XAML e controles nativos, com a mesma base de código rodando em todas as plataformas.
-
-Para um projeto MAUI completo de produção (Clean Architecture, MVVM, mapas e fluxo de gravação), veja o **[Strava_Maui](https://github.com/cardos0s/Strava_Maui)**.
+## 🗂️ Estrutura
 
 ```
 dotnet-maui-lab/
-├── cardosos-burguer/    # Demo: página de detalhes de produto
-├── christmas-catalog/   # Demo: catálogo temático multi-tela
-└── guides/              # Boas práticas de layout e performance
+├── reference-app/       # ⭐ App de referência: Clean Arch + MVVM + testes
+│   ├── src/TaskApp.Core/      (lib testável, sem MAUI)
+│   ├── src/TaskApp.Maui/      (head de UI)
+│   └── tests/                 (xUnit — 6/6 verdes)
+├── guides/              # Arquitetura · Testes · Layout · Performance
+├── cardosos-burguer/    # Demo de UI
+└── christmas-catalog/   # Demo de UI
 ```
 
-## ▶️ Rodando qualquer demo
+## ▶️ Rodando
+
 ```bash
-cd <pasta-da-demo>
-dotnet build
-dotnet build -t:Run -f net10.0-android   # ou -f net10.0-ios / -windows
+# testes do app de referência — sem workload MAUI nem emulador
+cd reference-app && dotnet test          # ✅ 6/6
+
+# qualquer demo / o head MAUI (requer workload MAUI)
+dotnet build -t:Run -f net10.0-android
 ```
-> Requer o workload do .NET MAUI instalado (`dotnet workload install maui`).
+
+Para um projeto MAUI completo em produção (mapas, gravação, MVVM), veja o **[Strava_Maui](https://github.com/cardos0s/Strava_Maui)**.
 
 ---
 

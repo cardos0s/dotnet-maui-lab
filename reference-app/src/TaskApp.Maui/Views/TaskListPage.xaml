@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TaskApp.Core.ViewModels;assembly=TaskApp.Core"
+             xmlns:models="clr-namespace:TaskApp.Core.Models;assembly=TaskApp.Core"
+             x:Class="TaskApp.Maui.Views.TaskListPage"
+             x:DataType="vm:TaskListViewModel"
+             Title="Tarefas"
+             BackgroundColor="{StaticResource Surface}">
+
+    <!--
+      x:DataType ativa COMPILED BINDINGS — bindings resolvidos em build,
+      sem reflection em runtime (ver guides/performance.md).
+      Layout em Grid (árvore visual rasa, ver guides/layout.md).
+    -->
+    <Grid RowDefinitions="Auto,Auto,*" Padding="16" RowSpacing="12">
+
+        <!-- contador de pendentes -->
+        <Label Grid.Row="0"
+               Text="{Binding RemainingCount, StringFormat='{0} pendente(s)'}"
+               FontSize="14" Opacity="0.7" />
+
+        <!-- entrada + botão adicionar -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+            <Entry Grid.Column="0"
+                   Text="{Binding NewTitle}"
+                   Placeholder="Nova tarefa..."
+                   ReturnCommand="{Binding AddTaskCommand}" />
+            <Button Grid.Column="1"
+                    Text="Adicionar"
+                    Command="{Binding AddTaskCommand}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White" />
+        </Grid>
+
+        <!-- lista: CollectionView com template raso e reciclagem -->
+        <RefreshView Grid.Row="2"
+                     IsRefreshing="{Binding IsBusy}"
+                     Command="{Binding LoadCommand}">
+            <CollectionView ItemsSource="{Binding Tasks}"
+                            ItemSizingStrategy="MeasureFirstItem">
+                <CollectionView.EmptyView>
+                    <Label Text="Nenhuma tarefa ainda. Adicione a primeira!"
+                           HorizontalOptions="Center" VerticalOptions="Center"
+                           Opacity="0.6" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:TaskItem">
+                        <Grid ColumnDefinitions="Auto,*,Auto" Padding="4,10" ColumnSpacing="12">
+                            <CheckBox Grid.Column="0"
+                                      IsChecked="{Binding IsCompleted}">
+                                <CheckBox.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TaskListViewModel}}, Path=ToggleCommand}"
+                                        CommandParameter="{Binding .}" />
+                                </CheckBox.GestureRecognizers>
+                            </CheckBox>
+                            <Label Grid.Column="1"
+                                   Text="{Binding Title}"
+                                   VerticalOptions="Center" />
+                            <Button Grid.Column="2"
+                                    Text="✕"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TaskListViewModel}}, Path=DeleteCommand}"
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="Transparent" TextColor="#FF6B6B" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TaskApp.Core/TaskApp.Core.csproj" />
+    <Project Path="src/TaskApp.Maui/TaskApp.Maui.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TaskApp.Core.Tests/TaskApp.Core.Tests.csproj" />
+  </Folder>
+</Solution>
