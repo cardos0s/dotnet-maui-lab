@@ -26,6 +26,20 @@ Uma **trilha de aprendizado em ordem**, escrita pra explicar o *porquê* de cada
 
 🆘 [Erros comuns](./guides/troubleshooting.md) · 📖 [Glossário](./guides/glossary.md) · 🗺️ [Trilha completa (iniciante → sênior)](./guides/README.md)
 
+## 🔵 Apps de verdade — "minha tela funciona, e agora?"
+
+O que leva um exercício até a loja:
+
+| # | Guia | O que você aprende |
+|---|---|---|
+| 7 | [Consumindo APIs](./guides/networking.md) | Buscar dados e tratar a rede que falha |
+| 8 | [Armazenamento & offline-first](./guides/local-storage.md) | Guardar no aparelho, funcionar sem internet |
+| 9 | [Recursos do dispositivo](./guides/device-features.md) | GPS, câmera, sensores, permissões |
+| 10 | [Acessibilidade](./guides/accessibility.md) | Um app que todo mundo usa |
+| 11 | [Animações & feedback](./guides/animations.md) | O app que parece vivo |
+| 12 | [Código por plataforma](./guides/platform-specifics.md) | Quando "um código só" precisa de exceções |
+| 13 | [Publicando na loja](./guides/publishing.md) | Release, assinatura, App Store / Play |
+
 ---
 
 ## ⭐ App de referência — destaque
@@ -35,7 +49,7 @@ O **[reference-app (TaskApp)](./reference-app)** mostra como estruturar um app M
 - 🏛️ **Clean Architecture** — Core (`.NET` puro, testável) separado do head de UI
 - 🧩 **MVVM** com CommunityToolkit.Mvvm (source generators)
 - 💉 **Dependency Injection** — cadeia Repository → ViewModel → Page → App
-- ✅ **Testes unitários** das ViewModels rodando **sem emulador** — `6/6 verdes`, executados de verdade
+- ✅ **Testes unitários** das ViewModels rodando **sem emulador** — `11/11 verdes`, executados de verdade
 - ⚡ Compiled bindings, `CollectionView` reciclado, layout raso
 
 > O domínio é simples de propósito (lista de tarefas) — o valor está na **engenharia**, não no feature set. Veja a [ARCHITECTURE.md](./reference-app/ARCHITECTURE.md).
@@ -65,8 +79,8 @@ dotnet-maui-lab/
 ├── reference-app/       # ⭐ App de referência: Clean Arch + MVVM + testes
 │   ├── src/TaskApp.Core/      (lib testável, sem MAUI)
 │   ├── src/TaskApp.Maui/      (head de UI)
-│   └── tests/                 (xUnit — 6/6 verdes)
-├── guides/              # Trilha do zero ao sênior (10 guias + glossário)
+│   └── tests/                 (xUnit — 11/11 verdes)
+├── guides/              # Trilha do zero ao sênior (17 guias + glossário)
 ├── cardosos-burguer/    # Demo de UI
 └── christmas-catalog/   # Demo de UI
 ```
@@ -75,7 +89,7 @@ dotnet-maui-lab/
 
 ```bash
 # testes do app de referência — sem workload MAUI nem emulador
-cd reference-app && dotnet test          # ✅ 6/6
+cd reference-app && dotnet test          # ✅ 11/11
 
 # qualquer demo / o head MAUI (requer workload MAUI)
 dotnet build -t:Run -f net10.0-android

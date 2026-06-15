@@ -15,6 +15,18 @@ Comece aqui e siga na ordem. No fim, você consegue construir uma tela funcional
 
 🆘 Travou? **[Erros comuns](./troubleshooting.md)** tem o seu sintoma. Termo estranho? **[Glossário](./glossary.md)**.
 
+## 🔵 Trilha "apps de verdade" — "minha tela funciona, e agora?"
+
+O que transforma um exercício num app que vai pra loja: dados, dispositivo, polimento e publicação.
+
+7. **[Consumindo APIs](./networking.md)** — buscar dados de um servidor e tratar quando a rede falha.
+8. **[Armazenamento & offline-first](./local-storage.md)** — guardar dados no aparelho e funcionar sem internet.
+9. **[Recursos do dispositivo](./device-features.md)** — GPS, câmera, sensores e o pulo do gato das **permissões**.
+10. **[Acessibilidade](./accessibility.md)** — fazer um app que todo mundo consegue usar.
+11. **[Animações & feedback](./animations.md)** — o app que parece vivo, sem virar firula.
+12. **[Código por plataforma](./platform-specifics.md)** — quando "um código só" precisa de exceções.
+13. **[Publicando na loja](./publishing.md)** — do "funciona aqui" ao "está na App Store".
+
 ## 🟡 Trilha intermediária — "já faço telas, quero fazer direito"
 
 Você já constrói coisas, mas o código começou a embolar. Hora de estruturar.
