@@ -1,13 +1,30 @@
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:512BD4,100:8A2BE2&height=160&section=header&text=.NET%20MAUI%20Lab&fontSize=46&fontColor=FFFFFF&fontAlignY=35&desc=Arquitetura%20%C2%B7%20Testes%20%C2%B7%20Performance%20%C2%B7%20UI%20cross-platform&descSize=15&descAlignY=58&descColor=FFFFFF"/>
 
 <p align="center">
-  Engenharia <b>.NET MAUI</b> de ponta a ponta — de demos de UI a um <b>app de referência com Clean Architecture, MVVM e testes</b>,<br/>
-  mais guias de arquitetura, testes, layout e performance.
+  Engenharia <b>.NET MAUI</b> de ponta a ponta — uma <b>trilha completa do zero ao nível sênior</b>:<br/>
+  do "nunca abri o MAUI" até Clean Architecture, MVVM e testes, com tudo explicado a fundo.
 </p>
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=cs,dotnet&perline=9" />
 </p>
+
+---
+
+## 🎓 Está começando? Comece por aqui
+
+Uma **trilha de aprendizado em ordem**, escrita pra explicar o *porquê* de cada coisa — não só o como:
+
+| # | Guia | O que você aprende |
+|---|---|---|
+| 1 | [Começando do zero](./guides/getting-started.md) | Instalar, configurar e rodar o primeiro app |
+| 2 | [XAML do zero](./guides/xaml-basics.md) | A linguagem das telas |
+| 3 | [Controles essenciais](./guides/controls.md) | O vocabulário: botões, listas, layouts |
+| 4 | [Data binding](./guides/data-binding.md) | Ligar a tela aos dados — o conceito-chave |
+| 5 | [Navegação](./guides/navigation.md) | Andar entre telas |
+| 6 | [Estilo e temas](./guides/styling-theming.md) | Deixar bonito + modo escuro |
+
+🆘 [Erros comuns](./guides/troubleshooting.md) · 📖 [Glossário](./guides/glossary.md) · 🗺️ [Trilha completa (iniciante → sênior)](./guides/README.md)
 
 ---
 
@@ -23,7 +40,7 @@ O **[reference-app (TaskApp)](./reference-app)** mostra como estruturar um app M
 
 > O domínio é simples de propósito (lista de tarefas) — o valor está na **engenharia**, não no feature set. Veja a [ARCHITECTURE.md](./reference-app/ARCHITECTURE.md).
 
-## 📚 Guias
+## 📚 Guias avançados — "já faço telas, quero fazer profissional"
 
 | Guia | Sobre |
 |---|---|
@@ -49,7 +66,7 @@ dotnet-maui-lab/
 │   ├── src/TaskApp.Core/      (lib testável, sem MAUI)
 │   ├── src/TaskApp.Maui/      (head de UI)
 │   └── tests/                 (xUnit — 6/6 verdes)
-├── guides/              # Arquitetura · Testes · Layout · Performance
+├── guides/              # Trilha do zero ao sênior (10 guias + glossário)
 ├── cardosos-burguer/    # Demo de UI
 └── christmas-catalog/   # Demo de UI
 ```
