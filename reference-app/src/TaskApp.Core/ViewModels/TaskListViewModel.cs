@@ -17,8 +17,13 @@ namespace TaskApp.Core.ViewModels;
 public partial class TaskListViewModel : ObservableObject
 {
     private readonly ITaskRepository _repo;
+    private readonly INavigationService _nav;
 
-    public TaskListViewModel(ITaskRepository repo) => _repo = repo;
+    public TaskListViewModel(ITaskRepository repo, INavigationService nav)
+    {
+        _repo = repo;
+        _nav = nav;
+    }
 
     public ObservableCollection<TaskItem> Tasks { get; } = [];
 
@@ -79,4 +84,8 @@ public partial class TaskListViewModel : ObservableObject
         Tasks.Remove(item);
         OnPropertyChanged(nameof(RemainingCount));
     }
+
+    /// <summary>Abre a tela de edição da tarefa — por intenção, sem tocar no MAUI.</summary>
+    [RelayCommand]
+    private Task OpenEditAsync(TaskItem item) => _nav.GoToEditAsync(item.Id);
 }

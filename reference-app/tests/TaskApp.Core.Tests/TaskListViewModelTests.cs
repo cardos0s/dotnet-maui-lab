@@ -12,9 +12,13 @@ namespace TaskApp.Core.Tests;
 public class TaskListViewModelTests
 {
     private static TaskListViewModel CreateSut(out ITaskRepository repo)
+        => CreateSut(out repo, out _);
+
+    private static TaskListViewModel CreateSut(out ITaskRepository repo, out FakeNavigationService nav)
     {
         repo = new InMemoryTaskRepository();
-        return new TaskListViewModel(repo);
+        nav = new FakeNavigationService();
+        return new TaskListViewModel(repo, nav);
     }
 
     [Fact]
@@ -93,5 +97,19 @@ public class TaskListViewModelTests
         sut.NewTitle = "qualquer";   // deve disparar reavaliação do CanExecute
 
         Assert.True(raised);
+    }
+
+    [Fact]
+    public async Task OpenEdit_NavigatesToEdit_WithTheTaskId()
+    {
+        var sut = CreateSut(out _, out var nav);
+        sut.NewTitle = "Editar depois";
+        await sut.AddTaskCommand.ExecuteAsync(null);
+        var task = sut.Tasks[0];
+
+        await sut.OpenEditCommand.ExecuteAsync(task);
+
+        // a ViewModel pediu navegação pra edição da tarefa certa — sem UI envolvida
+        Assert.Equal(task.Id, nav.NavigatedToEditId);
     }
 }

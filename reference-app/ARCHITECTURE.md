@@ -68,8 +68,8 @@ Uma linha em `MauiProgram.cs`. Nenhuma ViewModel muda. Nenhuma View muda. Nenhum
 
 Este app é deliberadamente enxuto pra deixar a estrutura visível. Num projeto de produção, os próximos passos naturais seriam:
 
-- **Persistência de verdade:** um `SqliteTaskRepository` com estratégia offline-first (a especialidade de quem escreve isto) e sincronização com um backend — sem que a ViewModel precise saber que a sincronização existe.
-- **Navegação abstraída:** Shell com rotas registradas e um `INavigationService`, pra que as ViewModels naveguem por intenção sem tocar em código de UI.
+- **Persistência de verdade:** já há um `JsonFileTaskRepository` (persiste em arquivo) provando a troca; o próximo seria um `SqliteTaskRepository` com estratégia offline-first (a especialidade de quem escreve isto) e sincronização com um backend — sem que a ViewModel precise saber que a sincronização existe.
+- **Navegação abstraída:** ✅ já implementada — o `INavigationService` deixa a `TaskListViewModel` abrir a tela de edição por intenção (`OpenEditCommand`), sem tocar em Shell/Navigation. Os testes verificam a navegação com um fake, sem UI.
 - **Estado explícito:** trocar o `IsBusy` booleano por estados nomeados (`Loading / Loaded / Empty / Error`), eliminando combinações impossíveis.
 - **Observabilidade:** logging estruturado e telemetria de uso, pra decidir com dado em vez de achismo.
 - **CI:** `dotnet test` em cada PR. Os testes do Core rodam sem emulador, então o sinal é rápido o suficiente pra ninguém mergear regressão. Ver [../guides/testing.md](../guides/testing.md).

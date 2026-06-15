@@ -49,7 +49,7 @@ O **[reference-app (TaskApp)](./reference-app)** mostra como estruturar um app M
 - 🏛️ **Clean Architecture** — Core (`.NET` puro, testável) separado do head de UI
 - 🧩 **MVVM** com CommunityToolkit.Mvvm (source generators)
 - 💉 **Dependency Injection** — cadeia Repository → ViewModel → Page → App
-- ✅ **Testes unitários** das ViewModels rodando **sem emulador** — `11/11 verdes`, executados de verdade
+- ✅ **Testes unitários** das ViewModels rodando **sem emulador** — `16/16 verdes`, executados de verdade
 - ⚡ Compiled bindings, `CollectionView` reciclado, layout raso
 
 > O domínio é simples de propósito (lista de tarefas) — o valor está na **engenharia**, não no feature set. Veja a [ARCHITECTURE.md](./reference-app/ARCHITECTURE.md).
@@ -79,8 +79,8 @@ dotnet-maui-lab/
 ├── reference-app/       # ⭐ App de referência: Clean Arch + MVVM + testes
 │   ├── src/TaskApp.Core/      (lib testável, sem MAUI)
 │   ├── src/TaskApp.Maui/      (head de UI)
-│   └── tests/                 (xUnit — 11/11 verdes)
-├── guides/              # Trilha do zero ao sênior (17 guias + glossário)
+│   └── tests/                 (xUnit — 16/16 verdes)
+├── guides/              # Trilha do zero ao sênior (21 guias + glossário)
 ├── cardosos-burguer/    # Demo de UI
 └── christmas-catalog/   # Demo de UI
 ```
@@ -89,7 +89,7 @@ dotnet-maui-lab/
 
 ```bash
 # testes do app de referência — sem workload MAUI nem emulador
-cd reference-app && dotnet test          # ✅ 11/11
+cd reference-app && dotnet test          # ✅ 16/16
 
 # qualquer demo / o head MAUI (requer workload MAUI)
 dotnet build -t:Run -f net10.0-android

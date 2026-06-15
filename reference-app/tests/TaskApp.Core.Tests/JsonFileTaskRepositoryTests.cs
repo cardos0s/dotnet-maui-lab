@@ -79,7 +79,7 @@ public sealed class JsonFileTaskRepositoryTests : IDisposable
         // A PROVA da arquitetura: a MESMA ViewModel, sem UMA linha de mudança,
         // funciona com a implementação de arquivo. Trocar persistência não afeta
         // a lógica de apresentação — é o que o ARCHITECTURE.md promete.
-        var vm = new TaskListViewModel(NewRepo());
+        var vm = new TaskListViewModel(NewRepo(), new FakeNavigationService());
         vm.NewTitle = "Tarefa via arquivo";
 
         await vm.AddTaskCommand.ExecuteAsync(null);

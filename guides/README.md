@@ -13,7 +13,7 @@ Comece aqui e siga na ordem. No fim, você consegue construir uma tela funcional
 5. **[Navegação](./navigation.md)** — andar entre telas (NavigationPage e Shell).
 6. **[Estilo e temas](./styling-theming.md)** — deixar bonito, consistente, com modo escuro.
 
-🆘 Travou? **[Erros comuns](./troubleshooting.md)** tem o seu sintoma. Termo estranho? **[Glossário](./glossary.md)**.
+🆘 Travou? **[Erros comuns](./troubleshooting.md)** tem o seu sintoma · 🐞 **[Debugging](./debugging.md)** pra caçar o bug com método · 📖 **[Glossário](./glossary.md)** pros termos.
 
 ## 🔵 Trilha "apps de verdade" — "minha tela funciona, e agora?"
 
@@ -22,10 +22,11 @@ O que transforma um exercício num app que vai pra loja: dados, dispositivo, pol
 7. **[Consumindo APIs](./networking.md)** — buscar dados de um servidor e tratar quando a rede falha.
 8. **[Armazenamento & offline-first](./local-storage.md)** — guardar dados no aparelho e funcionar sem internet.
 9. **[Recursos do dispositivo](./device-features.md)** — GPS, câmera, sensores e o pulo do gato das **permissões**.
-10. **[Acessibilidade](./accessibility.md)** — fazer um app que todo mundo consegue usar.
-11. **[Animações & feedback](./animations.md)** — o app que parece vivo, sem virar firula.
-12. **[Código por plataforma](./platform-specifics.md)** — quando "um código só" precisa de exceções.
-13. **[Publicando na loja](./publishing.md)** — do "funciona aqui" ao "está na App Store".
+10. **[Fontes & ícones](./fonts-icons.md)** — identidade visual que parece profissional.
+11. **[Acessibilidade](./accessibility.md)** — fazer um app que todo mundo consegue usar.
+12. **[Animações & feedback](./animations.md)** — o app que parece vivo, sem virar firula.
+13. **[Código por plataforma](./platform-specifics.md)** — quando "um código só" precisa de exceções.
+14. **[Publicando na loja](./publishing.md)** — do "funciona aqui" ao "está na App Store".
 
 ## 🟡 Trilha intermediária — "já faço telas, quero fazer direito"
 
@@ -38,6 +39,7 @@ Você já constrói coisas, mas o código começou a embolar. Hora de estruturar
 
 - **[Testes](./testing.md)** — por que apps mobile não têm testes e como sair dessa; testar ViewModels sem emulador.
 - **[Performance](./performance.md)** — startup, scroll, memória: onde o tempo realmente vai, e como medir antes de otimizar.
+- **[CI/CD](./ci-cd.md)** — build, teste e entrega no automático; por que a arquitetura testável "paga o aluguel" aqui.
 
 ## ⭐ E veja funcionando de verdade
 

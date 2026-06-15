@@ -57,7 +57,14 @@
                             </CheckBox>
                             <Label Grid.Column="1"
                                    Text="{Binding Title}"
-                                   VerticalOptions="Center" />
+                                   VerticalOptions="Center">
+                                <!-- tocar no título abre a edição (via OpenEditCommand da ViewModel da lista) -->
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TaskListViewModel}}, Path=OpenEditCommand}"
+                                        CommandParameter="{Binding .}" />
+                                </Label.GestureRecognizers>
+                            </Label>
                             <Button Grid.Column="2"
                                     Text="✕"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TaskListViewModel}}, Path=DeleteCommand}"
